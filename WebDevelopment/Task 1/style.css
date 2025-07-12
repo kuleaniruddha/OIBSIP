@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+  background: transparent;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: #003366; /* Deep blue for scrolled navbar */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff; /* Sky Blue */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+  background: url('hero.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 64, 0.6); /* Blue overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background: #00bfff;
+  color: #fff;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #007acc;
+}
+
+/* Features */
+.features-section {
+  padding: 80px 40px;
+  background: #e6f2ff;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  width: 280px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.feature-card h3 {
+  margin: 15px 0 10px;
+  color: #003366;
+}
+
+/* Contact */
+.contact-section {
+  background: #003366;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: #001f3f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 20px;
+  background: #f0f8ff;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+/* Testimonials */
+.testimonials-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.testimonial-slider {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#testimonial-author {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2575fc;
+}
+
+/* Team */
+.team-section {
+  padding: 60px 20px;
+  background: #e6f2ff;
+  text-align: center;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.team-card {
+  background: white;
+  width: 220px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Scroll to Top */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px;
+  font-size: 20px;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+/* Dark Mode */
+.toggle-mode {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .feature-card,
+body.dark-mode .team-card {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* Leadership & Culture */
+.culture-section {
+  padding: 70px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.culture-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #003366;
+}
+
+.culture-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.culture-card {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.culture-card:hover {
+  transform: translateY(-10px);
+}
+
+.culture-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2575fc;
+}
+
+.culture-card p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
